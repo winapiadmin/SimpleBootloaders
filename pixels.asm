@@ -1,13 +1,13 @@
 	bits 	32
 	org 	0x7c00
-	xor		ax, 		ax
-	xor		bx, 		bx
+	xor	ax, 		ax
+	xor	bx, 		bx
 	xor 	cx, 		cx
-	xor		dx, 		dx
+	xor	dx, 		dx
 	xor 	eax, 		eax
-	xor		ebx, 		ebx
+	xor	ebx, 		ebx
 	xor 	ecx, 		ecx
-	xor		edx, 		edx
+	xor	edx, 		edx
 	;set video mode
 	mov 	ah, 		0x00
 	mov 	al, 		0x13
@@ -24,22 +24,22 @@ main:
 	push	cx
 	push 	dx
 	mov 	al, 		0Dh
-	inc		cx
-	dec		dx
+	inc	cx
+	dec	dx
 	int 	10h
-	inc		al
+	inc	al
 	mov 	bh, 		al
 	pop 	cx
-	pop		dx
-	pop		ax
-	inc		dx
+	pop	dx
+	pop	ax
+	inc	dx
 	mov 	al, 		bh
 	inc 	al
-	and		al, 		0xFF
+	and	al, 		0xFF
 	mov 	ah, 		0x0C
 	int 	10h
 	;hlt
 	jmp 	main
 	
 times 		510 - ($ - $$) db 0
-dw 			0xAA55 ; Signature
+dw 		0xAA55 ; Signature
